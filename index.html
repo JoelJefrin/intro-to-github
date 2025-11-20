@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOG Feature Extractor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Histogram of Oriented Gradients (HOG) Feature Extractor</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*">
+            <label for="imageInput" class="upload-btn">Choose Image</label>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="cellSize">Cell Size: <span id="cellSizeValue">8</span></label>
+                <input type="range" id="cellSize" min="4" max="16" value="8" step="2">
+            </div>
+            <div class="control-group">
+                <label for="bins">Orientation Bins: <span id="binsValue">9</span></label>
+                <input type="range" id="bins" min="6" max="12" value="9" step="1">
+            </div>
+            <button id="processBtn" disabled>Extract HOG Features</button>
+        </div>
+
+        <div class="results">
+            <div class="image-container">
+                <h3>Original Image</h3>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="image-container">
+                <h3>HOG Visualization</h3>
+                <canvas id="hogCanvas"></canvas>
+            </div>
+        </div>
+
+        <div id="featureInfo" class="feature-info"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
